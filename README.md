@@ -1,2 +1,0 @@
-# deevathomas
- personal site 
