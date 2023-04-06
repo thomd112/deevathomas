@@ -29,11 +29,22 @@ h1{
   display: grid;
 grid-auto-flow: column;
 justify-content: end;
+
   
 }
+
 .item{
   grid-template-columns:auto;
-  text-align: right
+  text-align: right;
+  font-size: x-large;
+  position: relative;bottom: 30px; left: 0px;
+}
+
+.item1{
+  justify-content: start;
+  grid-template-columns:auto;
+  text-align: left;
+  font-size: x-large;
 }
 
 .w{
