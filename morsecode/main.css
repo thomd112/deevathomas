@@ -10,93 +10,122 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+   
+  
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
 
 body{
-  background-color: #FCF6F5FF;
-  color: #89ABE3FF;
-  font-family: Arial, Helvetica, sans-serif;
-  
-  
+  background-color: #222;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
 }
+
 
 h1{
-  padding-top: rem;
+  
+  font-family: "cy", sans-serif;
+font-weight: 600;
+font-style: normal;
+font-size: 150px;
+text-align: center;
+color: #e3dede;
+}
+
+h3{
+  font-family: "cy", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  text-align: left;
+  color: #e3dede;
+  padding-top: 60px;
+}
+
+h4{
+  font-family: "cy", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  text-align: right;
+  color: #e3dede;
+  padding-top: 90px;
+}
+
+
+
+.instructions{
+  font-size: 40px;
+  color: #e3dede;
   text-align: center;
- font-size: 6rem;
-}
-
-a{
-  text-decoration: none;
-}
-
-a:link {
-  color: lightblue;
-}
-
-
-a:visited {
-  color: green;
-}
-
-
-a:hover {
-  color: hotpink;
-}
-
-
-a:active {
-  color: blue;
-}
-
-
-
-
-
-
-.welcome{
-  text-align: center;
-  font-size: large;
 }
 
 .container{
   display: grid;
-grid-auto-flow: column;
-justify-content: end;
+  grid-template-columns: 22fr 1fr;
+}
 
+
+
+/* a:hover{
+
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='50' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>⦿</text></svg>") 16 0,auto; 
+}
+   */
+ 
+
+
+
+
+
+
+a:visited{
+  color:#e3dede;
+  font-family: "cy", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
   
 }
+a:link{
+  text-decoration: none;
+  color:#e3dede;
+  font-family: "cy", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+}
 
-.item{
-  grid-template-columns:auto;
-  text-align: right;
+a:hover {
+  color: #b3d4fc;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 3fr 12fr 1fr;
+  color:#e3dede;
+  font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
-  position: relative;bottom: 30px; left: 0px;
+  align-items: left;
 }
 
-.item1{
-  justify-content: start;
-  grid-template-columns:auto;
-  text-align: left;
+
+
+
+
+/* .menu{
+  color:aliceblue;
+  font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
-}
-
-.w{
-  text-align: left;
-}
-.hello{
-color: #EC7E15;
-}
-
-
-
-.contact{
- color:#EC7E15;
- display: grid;
-grid-auto-flow: auto auto;
-justify-content: flex-start;
-/* position: relative;top: 20px;  */
-
-}
+  text-align:right;
+} */
 
 
 
@@ -105,14 +134,27 @@ justify-content: flex-start;
 
 
 
+
+
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: #e3dede;
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background:#e3dede;
   text-shadow: none;
 }
 

@@ -11,100 +11,74 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-body{
-  background-color: #FCF6F5FF;
-  color: #89ABE3FF;
-  font-family: Arial, Helvetica, sans-serif;
-  
-  
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
-h1{
-  padding-top: rem;
-  text-align: center;
- font-size: 6rem;
+body{
+  background-color: #222;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+font-family: "cy", sans-serif;
+font-weight: 600;
+font-style: normal;
+color: #b3d4fc;
+/* padding-top: %; */
+/* padding-bottom: 10%; */
+
 }
 
 a{
   text-decoration: none;
+  cursor: pointer;
+
+
 }
 
-a:link {
-  color: lightblue;
+a{
+  color: #ccc;
+ 
 }
-
-
-a:visited {
-  color: green;
-}
-
 
 a:hover {
-  color: hotpink;
+  color: #b3d4fc;
+  cursor: pointer;
 }
-
-
-a:active {
-  color: blue;
-}
-
-
-
-
-
-
-.welcome{
-  text-align: center;
-  font-size: large;
+  
+h1{
+  font-size:xx-large;
 }
 
 .container{
   display: grid;
-grid-auto-flow: column;
-justify-content: end;
+  grid-template-columns: repeat(6,1fr) ;
 
-  
 }
 
-.item{
-  grid-template-columns:auto;
-  text-align: right;
-  font-size: x-large;
-  position: relative;bottom: 30px; left: 0px;
-}
-
-.item1{
-  justify-content: start;
-  grid-template-columns:auto;
+p{
   text-align: left;
-  font-size: x-large;
-}
-
-.w{
-  text-align: left;
-}
-.hello{
-color: #EC7E15;
-}
-
-
-
-.contact{
- color:#EC7E15;
- display: grid;
-grid-auto-flow: auto auto;
-justify-content: flex-start;
-/* position: relative;top: 20px;  */
-
+  margin-left: 20%;
+  margin-right: 20%;
+ 
+  font-size: 20px;
 }
 
 
 
 
 
-
-
-
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -285,6 +259,7 @@ textarea {
   a,
   a:visited {
     text-decoration: underline;
+    cursor: pointer;
   }
 
   a[href]::after {
