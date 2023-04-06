@@ -89,7 +89,14 @@ color: #EC7E15;
 
 
 
+.contact{
+ color:#EC7E15;
+ display: grid;
+grid-auto-flow: column;
+justify-content: start;
+position: relative;top: 20px; 
 
+}
 
 
 
