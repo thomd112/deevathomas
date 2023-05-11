@@ -17,13 +17,17 @@ body{
   font-family: "noka", sans-serif;
   font-weight: 600;
   font-style: normal;
+
   
 }
 
 
-
-
-
+#bottom-left-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1.5rem;
+}
 
 
 
