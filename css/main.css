@@ -366,3 +366,16 @@ textarea {
   }
 }
 
+.description {
+  color:#89ABE3FF;
+  padding-top: 15rem;
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+
+.description em {
+  color: #ffa500;
+}
+.description strong {
+  color: hotpink;
+}
