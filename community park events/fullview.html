@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NYC Parks Data</title>
+	<style>
+		
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			margin: 0;
+			padding: 16px;
+			background-color: #4CAF50;
+			color: white;
+			text-align: center;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			background-color: white;
+		}
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+		@media screen and (max-width: 600px) {
+			/* Add styles for small screens */
+			table {
+				font-size: 12px;
+			}
+			th, td {
+				padding: 4px;
+			}
+			h1 {
+				padding: 8px;
+				font-size: 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>NYC Parks Data</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Event Name</th>
+				<th>Borough</th>
+				<th>Audience</th>
+				<th>Attendance</th>
+			</tr>
+		</thead>
+		<tbody id="parks-table">
+			<!-- Table data will be dynamically added here -->
+		</tbody>
+	</table>
+
+	<script>
+		// Use JavaScript to fetch data from the API and add it to the table
+		fetch('https://data.cityofnewyork.us/resource/6v4b-5gp4.json')
+			.then(response => response.json())
+			.then(data => {
+				const parksTable = document.getElementById('parks-table');
+
+				data.forEach(park => {
+					const row = document.createElement('tr');
+					row.innerHTML = `
+						<td>${park.event_name}</td>
+						<td>${park.borough}</td>
+						<td>${park.audience}</td>
+						<td>${park.attendance}</td>
+					`;
+					parksTable.appendChild(row);
+				});
+			})
+			.catch(error => console.error(error));
+	</script>
+</body>
+</html>

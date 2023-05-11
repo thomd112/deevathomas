@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NYC Data for 2017</title>
+	<style>
+		.number {
+			font-size: 24px;
+			font-weight: 400;
+		}
+		.number--bold {
+			font-weight: 700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="number-list">
+	</ul>
+
+	<script src="script.js"></script>
+</body>
+</html>
+<style>
+  .number {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.number--bold {
+	font-weight: 700;
+}
+
+</style>
+
+<script>const API_ENDPOINT = 'https://data.cityofnewyork.us/resource/6v4b-5gp4.json?$where=date_extract_y(date_and_time)=2017';
+
+  const numberList = document.getElementById("attendance");
+  
+  fetch(API_ENDPOINT)
+    .then(response => response.json())
+    .then(data => {
+      for (let i = 0; i < data.length; i++) {
+        const value = parseFloat(data[i].value);
+        if (!isNaN(value)) {
+          const listItem = document.createElement("li");
+          listItem.innerText = value;
+          listItem.classList.add("number");
+          if (value > 100) {
+            listItem.classList.add("number--bold");
+          }
+          numberList.appendChild(listItem);
+        }
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number List</title>
+	<style>
+		.number {
+			font-size: 24px;
+			font-weight: 400;
+		}
+		.number--bold {
+			font-weight: 700;
+		}
+	</style>
+</head>
+<body>
+	<ul id="number-list">
+	</ul>
+
+	<script src="script.js"></script>
+</body>
+</html>
+<style>
+
+.number {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.number--bold {
+	font-weight: 700;
+}
+
+</style>
+
+<script>
+const numberList = document.getElementById("number-list");
+
+for (let i = 0; i < 20; i++) {
+  const randomNumber = Math.floor(Math.random() * 200) + 1;
+  const listItem = document.createElement("li");
+  listItem.innerText = randomNumber;
+  listItem.classList.add("number");
+  
+  if (randomNumber > 100) {
+    listItem.classList.add("number--bold");
+  }
+  
+  numberList.appendChild(listItem);
+}
+
+
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>pie chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        max-width: 500px;
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myChart"></canvas>
+    <script>
+      // fetch data from the API endpoint
+      fetch("https://data.cityofnewyork.us/resource/6v4b-5gp4.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // filter the data to include only events in 2017
+          const data2017 = data.filter((event) => event.year == 2019);
+
+          // process the data to count the number of events for each borough
+          const boroughs = {
+            "Brooklyn": 234,
+            "Manhattan": 162,
+            "Staten Island": 193,
+            "Queens": 103,
+            "Bronx": 314,
+          };
+          data2017.forEach((event) => {
+            const borough = borough;
+            if (borough in boroughs) {
+              boroughs[borough] += 1;
+            }
+          });
+
+          // create a pie chart using Chart.js library
+          const ctx = document.getElementById("myChart").getContext("2d");
+          const chart = new Chart(ctx, {
+            type: "pie",
+            data: {
+              labels: Object.keys(boroughs),
+              datasets: [
+                {
+                  data: Object.values(boroughs),
+                  backgroundColor: [
+                    "rgba(255, 99, 132, 0.5)",
+                    "rgba(54, 162, 235, 0.5)",
+                    "rgba(255, 206, 86, 0.5)",
+                    "rgba(75, 192, 192, 0.5)",
+                    "rgba(153, 102, 255, 0.5)",
+                  ],
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: "Number of Events in Each Borough in 2017",
+              },
+              legend: {
+                display: true,
+                position: "bottom",
+                labels: {
+                  fontSize: 30,
+                },
+              },
+              tooltips: {
+                enabled: true,
+                mode: "single",
+                callbacks: {
+                  label: function (tooltipItems, data) {
+                    return (
+                      data.labels[tooltipItems.index] +
+                      ": " +
+                      data.datasets[0].data[tooltipItems.index] +
+                      " events"
+                    );
+                  },
+                },
+              },
+            },
+          });
+        });
+    </script>
+  </body>
+</html> 
+
+
+
+
+
+
+
+

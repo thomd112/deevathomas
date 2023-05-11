@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Data</title>
+
+
+
+  
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <h1>Attendance Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Interval</th>
+        <th>Attendance Count</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  
+  <script>
+    // Define attendance intervals
+    const intervals = [0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+    
+    // Initialize attendance counts to zero
+    const attendanceCounts = {};
+    intervals.forEach(interval => {
+      attendanceCounts[interval] = 0;
+    });
+    
+    // Retrieve attendance data from API
+    fetch('https://data.cityofnewyork.us/resource/6v4b-5gp4.json?$where=date_extract_y(date_and_time)=2017')
+      .then(response => response.json())
+      .then(data => {
+        // Loop through attendance data and count attendance based on intervals
+        data.forEach(record => {
+          const attendance = parseInt(record.attendance);
+          intervals.forEach(interval => {
+            if (attendance >= interval && attendance < interval + 100) {
+              attendanceCounts[interval]++;
+            }
+          });
+        });
+        
+        // Display attendance counts in table
+        const tableBody = document.getElementById('table-body');
+        intervals.forEach(interval => {
+          const row = document.createElement('tr');
+          const intervalCell = document.createElement('td');
+          intervalCell.textContent = `${interval} - ${interval + 99}`;
+          const countCell = document.createElement('td');
+          countCell.textContent = attendanceCounts[interval];
+          row.appendChild(intervalCell);
+          row.appendChild(countCell);
+          tableBody.appendChild(row);
+        });
+      });
+  </script>
+</body>
+</html>
+
+
+
+       

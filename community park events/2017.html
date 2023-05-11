@@ -1,0 +1,364 @@
+
+    
+   
+
+    <!DOCTYPE html>
+    <html>
+      
+        <head>
+           
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, intial-scale=1.0">
+            <link rel="stylesheet" href="css/main.css">
+            <link rel="stylesheet" href="https://use.typekit.net/ygv1ego.css">
+            <link rel="stylesheet" href="https://use.typekit.net/ygv1ego.css">
+            <link rel="stylesheet" href="https://use.typekit.net/ipo5udb.css">
+            <link rel="stylesheet" href="https://use.typekit.net/ipo5udb.css">
+            <title>2017</title>
+        </head>
+    
+        <div id="data-container"></div>
+        
+    
+        
+    
+    
+            <div class="nyc">
+              <div class="ite"><a href="index.html">nyc data</a></div>
+              <!-- <div class="item"><h1>NYC Events - 2017</h1></div> -->
+              <div class="ite"></div>
+            </div>
+          
+           
+        
+            <div class="item"><h1>NYC Events - 2017</h1></div>
+       <div>
+        <p class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Events: 54</p> 
+       </div>
+       
+        
+    
+    
+    
+    
+    
+    
+    
+    
+     
+       
+       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+       <style>
+         canvas {
+           max-width: 500px;
+           max-height: 500px;
+         }
+    
+       </style>
+     </head>
+     <body>
+       <canvas id="myChart"></canvas>
+      
+       <script>
+         // fetch data from the API endpoint
+         fetch("https://data.cityofnewyork.us/resource/6v4b-5gp4.json")
+           .then((response) => response.json())
+           .then((data) => {
+             // filter the data to include only events in 2017
+             const data2017 = data.filter((event) => event.year == 2017);
+    
+             // process the data to count the number of events for each borough
+             const boroughs = {
+               "Brooklyn": 10,
+               "Manhattan": 9,
+               "Staten Island": 5,
+               "Queens": 0,
+               "Bronx": 30,
+             };
+             data2017.forEach((event) => {
+               const borough = borough;
+               if (borough in boroughs) {
+                 boroughs[borough] += 1;
+               }
+             });
+    
+             // create a pie chart using Chart.js library
+             const ctx = document.getElementById("myChart").getContext("2d");
+             const chart = new Chart(ctx, {
+               type: "pie",
+               data: {
+                 labels: Object.keys(boroughs),
+                 datasets: [
+                   {
+                     data: Object.values(boroughs),
+                     backgroundColor: [
+                       "rgba(255, 99, 132, 0.5)",
+                       "rgba(54, 162, 235, 0.5)",
+                       "rgba(255, 206, 86, 0.5)",
+                       "rgba(75, 192, 192, 0.5)",
+                       "rgba(153, 102, 255, 0.5)",
+                     ],
+                   },
+                 ],
+               },
+               options: {
+                 responsive: true,
+                 maintainAspectRatio: false,
+                 title: {
+                   display: true,
+                   text: "Number of Events in Each Borough in 2017",
+                 },
+                 legend: {
+                   display: true,
+                   position: "bottom",
+                   labels: {
+                     fontSize: 10,
+                   },
+                 },
+                 tooltips: {
+                   enabled: true,
+                   mode: "single",
+                   callbacks: {
+                     label: function (tooltipItems, data) {
+                       return (
+                         data.labels[tooltipItems.index] +
+                         ": " +
+                         data.datasets[0].data[tooltipItems.index] +
+                         "events"
+                       );
+                     },
+                   },
+                 },
+               },
+             });
+           });
+       </script>
+     </body>
+    
+     <br>
+     <br>
+
+     <body>
+      <table>
+        <thead>
+          <tr>
+            <th>Borough</th>
+            <th>Event</th>
+            <th>Attendance</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <script>
+        fetch('https://data.cityofnewyork.us/resource/6v4b-5gp4.json?$where=date_extract_y(date_and_time)=2017')
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            const tableBody = document.querySelector('tbody');
+      
+            data.forEach(event => {
+              const row = document.createElement('tr');
+      
+              const boroughCell = document.createElement('td');
+              boroughCell.textContent = event.borough;
+              row.appendChild(boroughCell);
+      
+              const eventCell = document.createElement('td');
+              eventCell.textContent = event.event_name;
+              row.appendChild(eventCell);
+      
+              const attendanceCell = document.createElement('td');
+              attendanceCell.textContent = event.attendance;
+              row.appendChild(attendanceCell);
+            
+           
+      
+      
+              // Adding class to row based on borough
+              row.classList.add(event.borough.toLowerCase().replace(/ /g, '-'));
+             
+      
+              tableBody.appendChild(row);
+            });
+          })
+          .catch(error => console.error(error));
+      </script>
+      </body>
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <style>
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 2px solid #FDF5E6;
+        padding: 20px;
+        text-align: center;
+      }
+  
+  
+    </style>
+  </head>
+  <body>
+ 
+    <table>
+      <thead>
+        <tr>
+          <th>Interval</th>
+          <th>Attendance Count</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+    
+    <script>
+      // Define attendance intervals
+      const intervals = [0, 50, 100, 200, 300, 400, 500, ];
+      
+      // Initialize attendance counts to zero
+      const attendanceCounts = {};
+      intervals.forEach(interval => {
+        attendanceCounts[interval] = 0;
+      });
+      
+      // Retrieve attendance data from API
+      fetch('https://data.cityofnewyork.us/resource/6v4b-5gp4.json?$where=date_extract_y(date_and_time)=2017')
+        .then(response => response.json())
+        .then(data => {
+          // Loop through attendance data and count attendance based on intervals
+          data.forEach(record => {
+            const attendance = parseInt(record.attendance);
+            intervals.forEach(interval => {
+              if (attendance >= interval && attendance < interval + 100) {
+                attendanceCounts[interval]++;
+              }
+            });
+          });
+          
+          // Display attendance counts in table
+          const tableBody = document.getElementById('table-body');
+          intervals.forEach(interval => {
+            const row = document.createElement('tr');
+            const intervalCell = document.createElement('td');
+            intervalCell.textContent = `${interval} - ${interval + 99}`;
+            const countCell = document.createElement('td');
+            countCell.textContent = attendanceCounts[interval];
+            row.appendChild(intervalCell);
+            row.appendChild(countCell);
+            tableBody.appendChild(row);
+          });
+        });
+    </script>
+  </body>
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+<button id="scrollBtn">Scroll to bottom</button>
+<script>
+  const scrollBtn = document.getElementById('scrollBtn');
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+});
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 500) {
+    scrollBtn.style.display = 'block';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+
+</script>
+
+    
+    
+      
+
+
+
+
+
+<button id="scroll-to-top">Scroll to top</button>
+
+          
+    
+<script>
+
+const scrollToTopButton = document.getElementById('scroll-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    scrollToTopButton.style.display = 'block';
+  } else {
+    scrollToTopButton.style.display = 'none';
+  }
+});
+
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+    </html>
+    
+    
+    
+    

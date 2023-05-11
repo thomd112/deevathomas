@@ -1,0 +1,313 @@
+body{
+  font-family: "forma-djr-micro", sans-serif;
+  font-weight: 350;
+  font-style: normal;
+font-size: 2.5rem;
+text-align: center;
+color: #006400;
+background-color: #FDF5E6;
+}
+
+h1{
+  font-family: "forma-djr-micro", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+font-size: 2.5rem;
+text-align: center;
+color: #006400;
+background-color: #FDF5E6;
+cursor: auto;
+
+}
+
+td,tr{
+  font-family: "forma-djr-micro", sans-serif;
+  color: #006400;
+  font-size: 2rem;;
+
+}
+
+.flex-container {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; }
+
+.item {
+  flex: 1; 
+  height: 100px;
+  background-color: #FDF5E6; 
+  margin: 0 10px; 
+  font-size: 1.5rem;
+  padding-top: 10px;
+  font-family: "menca", sans-serif;
+}
+
+.item1 {
+  flex: 1; 
+  height: 100px;
+  background-color: #FDF5E6; 
+  margin: 0 10px; 
+  font-size: 1.5rem;
+  padding-top: 10px;
+  font-family: "menca", sans-serif;
+}
+
+
+.flex-container2 {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; }
+
+.item {
+  flex: 1; 
+  height: 100px;
+  background-color: #FDF5E6; 
+  margin: 0 10px; 
+  font-size: 1.5rem;
+  padding-top: 10px;
+  font-family: "menca", sans-serif;
+}
+
+
+.flex-container3 {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.flex-container3:hover{
+  font-weight: 400px;
+}
+
+
+#data-container {
+    display: none;
+  }
+  
+
+h1{
+    text-align: center;
+    cursor: pointer;
+}
+
+
+p{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "forma-djr-micro", sans-serif;
+    
+ }
+
+
+ 
+      table {
+ 
+        width: 100%;
+      }
+
+      th, td {
+        border: 0px solid black;
+        padding: 20px;
+        text-align: center;
+        
+      
+      }
+
+      th {
+        background-color: rgb(250, 237, 228);
+   
+      }
+
+     
+      .bronx {
+        background-color: rgba(153, 102, 255, 0.5);
+      }
+
+      .brooklyn {
+        background-color:rgba(255, 99, 132, 0.5);
+      }
+
+      .manhattan {
+        background-color: rgba(54, 162, 235, 0.5);
+      }
+
+      .queens {
+        background-color:rgba(75, 192, 192, 0.5) ;
+      }
+
+      .staten-island {
+        background-color:rgba(255, 206, 86, 0.5);
+      }
+   
+      
+   
+
+
+#hello{
+    text-align: right;
+}
+
+a{
+  font-family: "forma-djr-micro", sans-serif;
+  font-weight: 00;
+  font-style: normal;
+font-size: 4rem;
+text-align: center;
+text-decoration: none;
+color: #2F5233;
+
+
+}
+
+.firstStyle {
+  text-decoration:none;
+  color: #375300; 
+  font-size: 4rem;
+  text-align: center;
+  
+}
+
+.years{
+  font-size: 3rem;
+}
+
+
+.years:visited{
+  color: rgb(244, 186, 186); 
+}
+
+
+
+
+a:hover{
+    /* color: #9acd32; */
+    color: rgb(244, 186, 186); 
+    font-weight: 400;
+}
+a:visited {
+  color: rgb(244, 186, 186); 
+  }
+
+button{
+ height: 50px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(244, 186, 186);
+  box-shadow: #9acd32;
+  font-family: "menca", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+    
+}
+
+button:hover{
+  transform: scale(1.2);
+}
+
+h3{
+    font-size: 5rem;
+}
+
+
+
+.title{
+  text-align: left;
+  padding-top: 10px;
+  color: #375300;
+  font-weight: 400;
+  cursor: auto;
+}
+
+
+
+
+.text-container {
+  position: relative;
+  width: 100%;
+ 
+}
+
+.animated-text {
+  position: relative;
+ text-align: center;
+  font-size: 3rem;
+  animation: organic-move 5s ease-in-out infinite;
+  animation-iteration-count: 1;
+}
+
+@keyframes organic-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5%, -5%) rotate(-5deg);
+  }
+  50% {
+    transform: translate(0, -10%) rotate(5deg);
+  }
+  75% {
+    transform: translate(5%, -5%) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+.nyc{
+  text-align: right;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.nyc:hover{
+  transform: scale(1);
+  font-weight: 400;
+}
+
+
+
+#scrollBtn {
+  height: 50px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: rgb(244, 186, 186);
+  box-shadow: #9acd32;
+  font-family: "forma-djr-micro", sans-serif;
+  
+  text-align: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: 3px #375300;
+
+  color: white;
+  cursor: pointer;
+  
+}
+
+
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #006400;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "forma-djr-micro", sans-serif;
+  
+}
+
+#scroll-to-top:hover {
+  background-color: #006400;
+}

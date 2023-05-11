@@ -1,0 +1,386 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Pie Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        max-width: 500px;
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myChart"></canvas>
+    <script>
+      // fetch data from the API endpoint
+      fetch('https://data.cityofnewyork.us/resource/6v4b-5gp4.json')
+        .then(response => response.json())
+        .then(data => {
+          // process the data to count the number of events for each name
+          const names = {};
+          data.forEach(event => {
+            const name = event.name_of_event;
+            if (name in names) {
+              names[name] += 1;
+            } else {
+              names[name] = 1;
+            }
+          });
+
+          // create a pie chart using Chart.js library
+          const ctx = document.getElementById('myChart').getContext('2d');
+          const chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: Object.keys(names),
+              datasets: [{
+                data: Object.values(names),
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.5)',
+                  'rgba(54, 162, 235, 0.5)',
+                  'rgba(255, 206, 86, 0.5)',
+                  'rgba(75, 192, 192, 0.5)',
+                  'rgba(153, 102, 255, 0.5)',
+                  'rgba(255, 159, 64, 0.5)'
+                ]
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: 'event_name'
+              },
+              legend: {
+                display: true,
+                position: 'bottom',
+                labels: {
+                  fontSize: 12
+                }
+              },
+              tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                  label: function(tooltipItems, data) {
+                    return data.labels[tooltipItems.index] + ": " + data.datasets[0].data[tooltipItems.index] + " event_name";
+                  }
+                }
+              }
+            }
+          });
+        });
+    </script>
+  </body>
+</html> 
+
+
+
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Pie Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        max-width: 500px;
+        max-height: 500px;
+      }  -->
+
+
+
+
+      <!-- <!DOCTYPE html>
+      <html>
+        <head>
+          <title>pie chart</title>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <style>
+            canvas {
+              max-width: 500px;
+              max-height: 500px;
+            }
+          </style>
+        </head>
+        <body>
+          <canvas id="myChart"></canvas>
+          <script>
+            // fetch data from the API endpoint
+            fetch("https://data.cityofnewyork.us/resource/6v4b-5gp4.json")
+              .then((response) => response.json())
+              .then((data) => {
+                // filter the data to include only events in 2017
+                const data2017 = data.filter((event) => event.year == 2017);
+      
+                // process the data to count the number of events for each borough
+                const boroughs = {
+                  "Brooklyn": 10,
+                  "Manhattan": 9,
+                  "Staten Island": 5,
+                  "Queens": 0,
+                  "Bronx": 30,
+                };
+                data2017.forEach((event) => {
+                  const borough = borough;
+                  if (borough in boroughs) {
+                    boroughs[borough] += 1;
+                  }
+                });
+      
+                // create a pie chart using Chart.js library
+                const ctx = document.getElementById("myChart").getContext("2d");
+                const chart = new Chart(ctx, {
+                  type: "pie",
+                  data: {
+                    labels: Object.keys(boroughs),
+                    datasets: [
+                      {
+                        data: Object.values(boroughs),
+                        backgroundColor: [
+                          "rgba(255, 99, 132, 0.5)",
+                          "rgba(54, 162, 235, 0.5)",
+                          "rgba(255, 206, 86, 0.5)",
+                          "rgba(75, 192, 192, 0.5)",
+                          "rgba(153, 102, 255, 0.5)",
+                        ],
+                      },
+                    ],
+                  },
+                  options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    title: {
+                      display: true,
+                      text: "Number of Events in Each Borough in 2017",
+                    },
+                    legend: {
+                      display: true,
+                      position: "bottom",
+                      labels: {
+                        fontSize: 30,
+                      },
+                    },
+                    tooltips: {
+                      enabled: true,
+                      mode: "single",
+                      callbacks: {
+                        label: function (tooltipItems, data) {
+                          return (
+                            data.labels[tooltipItems.index] +
+                            ": " +
+                            data.datasets[0].data[tooltipItems.index] +
+                            " events"
+                          );
+                        },
+                      },
+                    },
+                  },
+                });
+              });
+          </script>
+        </body>
+      </html>
+      
+         -->
+<!-- 
+         <!DOCTYPE html>
+<html>
+  <head>
+    <title>pie chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        max-width: 500px;
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myChart"></canvas>
+    <script>
+      // fetch data from the API endpoint
+      fetch('https://data.cityofnewyork.us/resource/6v4b-5gp4.json')
+        .then(response => response.json())
+        .then(data => {
+          // filter the data to include only events in 2017
+          const data2017 = data.filter(event => event.year == 2017);
+
+          // process the data to count the number of events for each borough
+          const boroughs = {
+            Brooklyn: 0,
+            'Manhattan': 30,
+            'Staten Island': 0,
+            Queens: 0,
+            Bronx: 0
+          };
+          data2017.forEach(event => {
+            const borough = event.borough;
+            if (borough in boroughs) {
+              boroughs[borough] += 1;
+            }
+          });
+
+          // create a pie chart using Chart.js library
+          const ctx = document.getElementById('myChart').getContext('2d');
+          const chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: Object.keys(boroughs),
+              datasets: [
+                {
+                  data: Object.values(boroughs),
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
+                  ]
+                }
+              ]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: 'Number of Events in Each Borough in 2017'
+              },
+              legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                  fontSize: 12
+                }
+              },
+              tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                  label: function(tooltipItems, data) {
+                    return data.labels[tooltipItems.index] + ": " + data.datasets[0].data[tooltipItems.index] + " events";
+                  }
+                }
+              },
+              plugins: {
+                labels: {
+                  render: 'percentage',
+                  fontColor: '#fff',
+                  precision: 2,
+                  fontSize: 20,
+                  position: 'border'
+                }
+              }
+            }
+          });
+        });
+    </script>
+  </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pie Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        max-width: 500px;
+        max-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myChart"></canvas>
+    <script>
+      // fetch data from the API endpoint
+      fetch('https://data.cityofnewyork.us/resource/6v4b-5gp4.json')
+        .then(response => response.json())
+        .then(data => {
+          // filter the data to include only events in 2017
+          const data2017 = data.filter(event => event.year == 2017);
+
+          // process the data to count the number of events for each borough
+          const boroughs = {
+            Brooklyn: 0,
+            Manhattan: 0,
+            'Staten Island': 0,
+            Queens: 0,
+            Bronx: 0
+          };
+          data2017.forEach(event => {
+            const borough = event.borough;
+            if (borough in boroughs) {
+              boroughs[borough] += 1;
+            }
+          });
+
+          // create a pie chart using Chart.js library
+          const ctx = document.getElementById('myChart').getContext('2d');
+          const chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: Object.keys(boroughs),
+              datasets: [{
+                data: Object.values(boroughs),
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.5)',
+                  'rgba(54, 162, 235, 0.5)',
+                  'rgba(255, 206, 86, 0.5)',
+                  'rgba(75, 192, 192, 0.5)',
+                  'rgba(153, 102, 255, 0.5)'
+                ]
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: 'Number of Events in Each Borough in 2017'
+              },
+              legend: {
+                display: true,
+                position: 'bottom',
+                labels: {
+                  fontSize: 12
+                }
+              },
+              tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                  label: function(tooltipItems, data) {
+                    return data.labels[tooltipItems.index] + ": " + data.datasets[0].data[tooltipItems.index] + " events";
+                  }
+                }
+              },
+              plugins: {
+                labels: {
+                  render: 'percentage',
+                  fontColor: ['black', 'white', 'white', 'white', 'white'],
+                  precision: 2,
+                  position: 'border'
+                }
+              }
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
