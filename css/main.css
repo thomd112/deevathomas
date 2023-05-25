@@ -13,7 +13,8 @@
 
 body{
   background-color: #FCF6F5FF;
-  color: #89ABE3FF;
+  color: 
+  #548ccc;
   font-family: "noka", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -367,7 +368,7 @@ textarea {
 }
 
 .description {
-  color:#89ABE3FF;
+  color: #548ccc;
   padding-top: 15rem;
   padding-left: 15rem;
   padding-right: 15rem;
