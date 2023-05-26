@@ -82,7 +82,22 @@ a:active {
   padding-top: 8rem;
   text-align: center;
   font-size: 5rem;
+  position: relative;
+  min-height: 100vh;
+  color: #548ccc;
+  }
+
+
+.word {
+ color: #548ccc;
 }
+
+
+
+
+
+
+
 
 .container{
   display: grid;
