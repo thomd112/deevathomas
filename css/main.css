@@ -22,6 +22,17 @@ body{
 }
   
 
+h1 {
+  font-size: 48px;
+  color: #548ccc;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+ font-size: 6rem;
+ 
+  
+}
+
 .word {
   font-size: 48px;
    color: #548ccc;
@@ -30,25 +41,19 @@ body{
  }
 
 
-h1 {
-  font-size: 48px;
-  color: #548ccc;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  
-}
 
 
 
 
 
 
-#bottom-left-text {
+
+/* #bottom-left-text {
   position: absolute;
   bottom: 0;
   left: 0;
   font-size: 1.5rem;
-}
+} */
 
 
 
@@ -57,15 +62,6 @@ h1 {
 
 
 
-
-
-
-
-h1{
-  padding-top: 3rem;
-  text-align: center;
- font-size: 6rem;
-}
 
 a{
   text-decoration: none;
