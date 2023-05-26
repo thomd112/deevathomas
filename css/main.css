@@ -78,9 +78,10 @@ a:active {
 
 
 
-.welcome{
+.intro{
+  padding-top: 8rem;
   text-align: center;
-  font-size: large;
+  font-size: 5rem;
 }
 
 .container{
