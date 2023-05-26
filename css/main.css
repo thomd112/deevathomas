@@ -13,14 +13,34 @@
 
 body{
   background-color: #FCF6F5FF;
-  color: 
-  #548ccc;
+  color:  #548ccc;
   font-family: "noka", sans-serif;
   font-weight: 600;
   font-style: normal;
+  height: 100vh;
+;
+}
+  
 
+.word {
+  font-size: 48px;
+   color: #548ccc;
+   transition: color 0.3s ease;
+   cursor: pointer;
+ }
+
+
+h1 {
+  font-size: 48px;
+  color: #548ccc;
+  transition: color 0.3s ease;
+  cursor: pointer;
   
 }
+
+
+
+
 
 
 #bottom-left-text {
@@ -88,9 +108,8 @@ a:active {
   }
 
 
-.word {
- color: #548ccc;
-}
+
+
 
 
 
