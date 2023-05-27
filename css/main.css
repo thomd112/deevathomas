@@ -50,15 +50,6 @@ h1 {
 
 
 
-/* #bottom-left-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: 1.5rem;
-} */
-
-
-
 
 
 
@@ -401,14 +392,14 @@ textarea {
 
 .description {
   color: #548ccc;
-  padding-top: 15rem;
   padding-left: 15rem;
   padding-right: 15rem;
+  font-size: 1.5rem;
 }
 
-.description em {
+/* .description em {
   color: #ffa500;
 }
 .description strong {
   color: hotpink;
-}
+} */
