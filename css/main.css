@@ -65,15 +65,24 @@ a:hover {
 
 
 a:active {
-  color: blue;
+  color: #78a1d3;
+}
+
+
+
+.heading{
+  font-size: 2rem;
+  cursor: default;
+  text-align: center;
 }
 
 .mc, .hc{
   text-align: center;
+  font-size: 1.5rem;
   
-   
-
+  
 }
+
 
 
 
