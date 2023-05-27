@@ -120,13 +120,13 @@ justify-content: end;
 
 
 .containertwo{
-  display: grid;
-  grid-template-columns: auto auto auto;
+grid-template-columns: repeat(4,100px);
 }
 
 .ite{
   color: #EC7E15;
-  grid-template-columns: 1fr 1fr 2fr
+  grid-template-columns: 1fr 1fr 2fr;
+  padding-left: 15rem;
 }
 
 .item{
