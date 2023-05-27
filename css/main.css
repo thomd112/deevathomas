@@ -28,7 +28,7 @@ h1 {
   transition: color 0.3s ease;
   cursor: pointer;
   text-align: center;
- font-size: 6rem;
+  font-size: 6rem;
  
   
 }
@@ -42,7 +42,7 @@ h1 {
 
 
  #changing-texts{
-  size: 1rem;
+  size: 1.5rem;
 }
 
 
@@ -99,7 +99,11 @@ a:active {
 
 
 
-
+  @media screen and (min-width: 780px) {
+    .full-width-img {
+    margin: auto;
+    width: 90%;
+    }
 
 
 
@@ -114,6 +118,17 @@ justify-content: end;
   
 }
 
+
+.containertwo{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.ite{
+  color: #EC7E15;
+  grid-template-columns: 1fr 1fr 2fr
+}
+
 .item{
   grid-template-columns:auto;
   text-align: right;
@@ -123,15 +138,12 @@ justify-content: end;
 
 .item1{
   justify-content: start;
-  grid-template-columns:auto;
-  text-align: left;
-  font-size: x-large;
-  font-size: 2rem;
+  grid-template-columns: 1fr 1fr 2fr;
+  font-size: 1.5rem;
 }
 
-.w{
-  text-align: left;
-}
+
+
 .hello{
 color: #EC7E15;
 }
