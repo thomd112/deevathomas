@@ -395,6 +395,7 @@ textarea {
   padding-left: 15rem;
   padding-right: 15rem;
   font-size: 1.5rem;
+  cursor: default;
 }
 
 /* .description em {
