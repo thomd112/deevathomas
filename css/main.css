@@ -135,7 +135,9 @@ a:active {
     width: 90%;
     }
 
-
+    #anchor{
+      text-align: center;
+    }
 
 
 
