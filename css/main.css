@@ -97,9 +97,12 @@ a:active {
   padding-left: 5rem;
  
   
+}
 
- 
-  
+#para{
+  font-size: 1rem;
+  padding-right: 5rem;
+  line-height: 150%;
 }
 
 
