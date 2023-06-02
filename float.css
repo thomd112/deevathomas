@@ -1,4 +1,10 @@
 body{
     background-color:#dee1f1;
-    
+    color:  #548ccc;
+  font-family: "noka", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  height: 100vh;
+  text-align: center;
+  font-size: 2rem;
 }
